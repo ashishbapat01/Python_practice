@@ -1,0 +1,7 @@
+def validate_login(username, password):
+    valid_username = "ashish"
+    valid_password = "ashish123"
+     if username == valid_username and password == valid_password:
+        return True
+    else:
+        return False
