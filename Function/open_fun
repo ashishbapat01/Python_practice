@@ -1,0 +1,13 @@
+# Opening a file for reading
+file_path = "example.txt"
+with open(file_path, "r") as file:
+    content = file.read()
+    print(content)
+
+# Opening a file for writing
+with open(file_path, "w") as file:
+    file.write("Hello, World!")
+
+# Opening a file for appending
+with open(file_path, "a") as file:
+    file.write("\nAppending new line.")
