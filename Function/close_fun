@@ -1,0 +1,8 @@
+# Open a file
+file_path = "example.txt"
+file = open(file_path, "r")
+
+# Perform operations on the file
+
+# Close the file
+file.close()
