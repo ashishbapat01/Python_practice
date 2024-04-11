@@ -1,0 +1,13 @@
+# Open a file
+file_path = "example.txt"
+file = open(file_path, "r")
+
+# Move the file pointer to byte offset 5 from the beginning of the file
+file.seek(5)
+
+# Read and print the content from the current file position
+content = file.read()
+print(content)
+
+# Close the file
+file.close()
