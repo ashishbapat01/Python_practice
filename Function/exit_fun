@@ -1,0 +1,7 @@
+import sys
+
+# Perform some operations
+print("Performing operations...")
+
+# Exit the script with exit code 0 (indicating success)
+sys.exit(0)
