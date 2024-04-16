@@ -1,0 +1,14 @@
+# Define a function to square a number
+def square(x):
+    return x ** 2
+
+# List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use map() to apply the square function to each element of the list
+squared_numbers = map(square, numbers)
+
+# Convert the result to a list
+squared_numbers_list = list(squared_numbers)
+
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
