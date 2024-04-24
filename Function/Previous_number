@@ -1,0 +1,16 @@
+def previous_number(number):
+    """
+    Returns the previous integer before the given number.
+
+    Args:
+        number (int): The input number.
+
+    Returns:
+        int: The previous integer before the input number.
+    """
+    return number - 1
+
+# Example usage:
+input_number = 10
+previous = previous_number(input_number)
+print(f"The previous number before {input_number} is {previous}.")
