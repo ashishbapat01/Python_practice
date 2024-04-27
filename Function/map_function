@@ -1,0 +1,7 @@
+# Define the list of numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Use map() with a lambda function and list comprehension to calculate squares of odd numbers and cubes of even numbers
+transformed_numbers = list(map(lambda x: x**2 if x % 2 != 0 else x**3, numbers))
+
+print(transformed_numbers)
