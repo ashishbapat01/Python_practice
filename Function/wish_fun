@@ -1,0 +1,12 @@
+def wish_birthday(name):
+    """
+    Prints a birthday wish for the given name.
+
+    Args:
+        name (str): The name of the person celebrating the birthday.
+    """
+    print(f"Happy Birthday, {name}! 🎉🎂🎈 May your day be filled with love, joy, and wonderful surprises!")
+
+# Example usage:
+celebrant_name = "John"
+wish_birthday(celebrant_name)
