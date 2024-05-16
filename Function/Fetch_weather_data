@@ -1,0 +1,45 @@
+import requests
+import json
+from datetime import datetime
+
+def fetch_weather_data(api_key, city):
+    """Fetches weather data for a given city from the OpenWeatherMap API and saves it to a file."""
+    
+    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    params = {
+        'q': city,
+        'appid': api_key,
+        'units': 'metric'
+    }
+    
+    # Step 1: Fetch data from the API
+    response = requests.get(base_url, params=params)
+    
+    if response.status_code == 200:
+        data = response.json()
+    else:
+        print(f"Error: Unable to fetch data for {city}. HTTP Status Code: {response.status_code}")
+        return
+    
+    # Step 2: Process the data
+    processed_data = {
+        'city': data['name'],
+        'country': data['sys']['country'],
+        'temperature': data['main']['temp'],
+        'weather': data['weather'][0]['description'],
+        'humidity': data['main']['humidity'],
+        'wind_speed': data['wind']['speed'],
+        'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    }
+    
+    # Step 3: Save the data to a JSON file
+    file_name = f"{city}_weather.json"
+    with open(file_name, 'w') as file:
+        json.dump(processed_data, file, indent=4)
+    
+    print(f"Weather data for {city} saved to {file_name}")
+
+# Example usage:
+api_key = 'your_api_key_here'  # Replace with your OpenWeatherMap API key
+city = 'New York'
+fetch_weather_data(api_key, city)
